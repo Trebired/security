@@ -1,8 +1,8 @@
 # @trebired/security
 
-Express/Node security middleware for Trebired apps: CORS, security headers, CSP, nonce generation, and HTTP request logging, wired through `.trebired/security/config.ts`.
+Express/Node security runtime for Trebired apps: CORS, security headers, CSP, nonce generation, HTTP request logging, and configured IP-ban maintenance, wired through `.trebired/security/config.ts`.
 
-This package owns generic middleware attachment and option building for these five systems. It does not own authentication, session management, CSRF protection, rate limiting, IP bans, or firewall rules — those stay app-owned because they depend on the app's own routing conventions, response rendering, and persisted state.
+This package owns generic middleware attachment, option building, IP-ban storage/runtime helpers, and startup ban repair/reconciliation. App-specific policy stays in `.trebired/security/config.ts`.
 
 ## Install
 
@@ -20,7 +20,7 @@ import { attachSecurity } from "@trebired/security";
 await attachSecurity(app);
 ```
 
-With no `.trebired/security/config.ts` present, all five systems attach in their default order with default options. Add the config file to customize order, disable a system, or pass per-system options.
+With no `.trebired/security/config.ts` present, all five middleware systems attach in their default order with default options. Add the config file to customize order, disable a system, pass per-system options, and configure IP-ban storage/maintenance.
 
 ## Concepts
 
@@ -54,14 +54,17 @@ export default defineConfig({
 
 Every system entry accepts `enabled` (default `true`), `order` (default per the list above), and `options` (passed straight to that system's attach function). Config files are plain TS modules; import app-owned functions (origin checks, a logger reader) directly into them the same way `.trebired/frontend/config.ts` imports palette and token values.
 
+`ipBans` config controls the generic ban engine: score windows, levels, store/table names, request IP extraction, and startup repair/reconciliation. `attachSecurity(app)` runs startup repair/reconciliation by default when IP bans are configured and enabled.
+
 ## Public API
 
-- `attachSecurity(app, options?)`: reads `.trebired/security/config.ts` (or an inline `options.config`) and attaches every enabled system in order.
+- `attachSecurity(app, options?)`: reads `.trebired/security/config.ts` (or an inline `options.config`), attaches every enabled system in order, initializes package logging, and runs configured IP-ban startup maintenance.
 - `attachNonceMiddleware`, `createNonceMiddleware`: per-request CSP nonce, written to `res.locals`.
 - `attachSecurityHeadersMiddleware`, `createSecurityHeadersMiddleware`, `applySecurityHeaders`: HSTS, frame options, referrer policy, permissions policy, and related headers.
 - `attachContentSecurityPolicyMiddleware`, `createContentSecurityPolicyMiddleware`, `applyContentSecurityPolicy`, `contentSecurityPolicyHeader`, `defaultContentSecurityPolicyDirectives`: CSP header construction, nonce-aware.
 - `attachCorsMiddleware`, `createCorsOptionsDelegate`, `defaultCorsOptions`: CORS, backed by the `cors` package.
 - `attachRequestLogger`: structured request/response logging (skips static assets, source maps, and quiet 404 browser probes automatically; no route-suppression option).
+- `recordLoginAttempt`, `recordRateLimitHit`, `recordRequestSecurityEvent`, `isBlocked`, `repairCorruptedBanTargets`, `reconcileActiveBans`, and related IP-ban helpers: configured IP-ban runtime.
 - `defineConfig`, `loadSecurityConfig`: `.trebired/security/config.ts` support.
 
 ## What It Does Not Do
@@ -69,6 +72,5 @@ Every system entry accepts `enabled` (default `true`), `order` (default per the 
 This package does not:
 
 - Implement CSRF protection, session handling, or authentication.
-- Implement rate limiting or IP/ban enforcement.
 - Suppress request logging for specific routes. Every request logs.
-- Persist or sync any state; every system is stateless per request.
+- Define app-specific ban policy outside config.
