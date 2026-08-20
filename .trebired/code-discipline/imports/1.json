@@ -1,0 +1,14 @@
+{
+  "#3uz11hbjf7fs": "./src/logging.ts",
+  "#45uwzc4dg5ka": "./.trebired/logger/config.ts",
+  "#6qzohghc72l4": "./src/cors.ts",
+  "#76arxj6ar5r5": "./src/policy.ts",
+  "#93k0jb613tpe": "./scripts/verify-pack.mjs",
+  "#9xurjbxdcjw1": "./scripts/build/generated/tsconfig.mjs",
+  "#a84l3x8z614m": "./src/index.ts",
+  "#pzdnec9g9mde": "./src/helpers.ts",
+  "#s36vkhfnam5h": "./scripts/prepare-dist.mjs",
+  "#sdg3xe45mhd9": "./src/attach.ts",
+  "#t6wa0hlhh5fp": "./src/config.ts",
+  "#vsmkcuo4jes3": "./src/request-log.ts"
+}
