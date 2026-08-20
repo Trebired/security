@@ -5,7 +5,7 @@
     "": {
       "name": "@trebired/security",
       "dependencies": {
-        "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.16",
+        "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.17",
         "@trebired/env": "^0.1.0",
         "@trebired/result": "^1.2.6",
         "@trebired/store": "^3.1.0",
@@ -25,7 +25,7 @@
   "packages": {
     "@package/logger": ["@trebired/logger@2.5.31", "", { "dependencies": { "@package/result": "npm:@trebired/result@^1.1.6", "@trebired/utils": "^0.6.0", "fflate": "^0.8.3", "tar-stream": "^3.2.0" }, "peerDependencies": { "react": ">=18" }, "optionalPeers": ["react"] }, "sha512-oJ5hQvzBI6iJsSiF9b3yu0O+AZQtXkcK8OarvEjjRMZJibUqcERPqy06VXrecozsDaqGuE1diNP9vU3C8th63g=="],
 
-    "@package/logger-adapter": ["@trebired/logger-adapter@0.4.16", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-aeFGnmMaek0C25ORHR78B8/7BkzzyEO9C+3BgY+ApOrI7pN2F3tK8NuYlH7zZg0qI4jRLq3N927A8sSdpmpBYg=="],
+    "@package/logger-adapter": ["@trebired/logger-adapter@0.4.17", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-yO7j0vttLJiGbadJKpz6bbF43BRtrBNiVgcaOdj/HJIw1qVybwY0GJeHpvZ6a4c8RtF2ieyUFjKiAaoqQ+w9GA=="],
 
     "@package/result": ["@trebired/result@1.2.6", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.6", "@trebired/utils": "^0.6.0" } }, "sha512-6RZEAVYVsdy3+Z3z8DdfvvgLWvsKnu8C1yK16UWYDzv6LkPcxHTB9lO2SKYeuTXQbk4u0yl6WdjoC0GxT1JuxQ=="],
 
@@ -117,11 +117,17 @@
 
     "@package/logger-adapter/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
 
+    "@package/result/@package/logger-adapter": ["@trebired/logger-adapter@0.4.16", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-aeFGnmMaek0C25ORHR78B8/7BkzzyEO9C+3BgY+ApOrI7pN2F3tK8NuYlH7zZg0qI4jRLq3N927A8sSdpmpBYg=="],
+
     "@package/result/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
 
     "@trebired/code-discipline/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
 
+    "@trebired/result/@package/logger-adapter": ["@trebired/logger-adapter@0.4.16", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-aeFGnmMaek0C25ORHR78B8/7BkzzyEO9C+3BgY+ApOrI7pN2F3tK8NuYlH7zZg0qI4jRLq3N927A8sSdpmpBYg=="],
+
     "@trebired/result/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
+
+    "@trebired/store/@package/logger-adapter": ["@trebired/logger-adapter@0.4.16", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-aeFGnmMaek0C25ORHR78B8/7BkzzyEO9C+3BgY+ApOrI7pN2F3tK8NuYlH7zZg0qI4jRLq3N927A8sSdpmpBYg=="],
 
     "@trebired/store/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
   }
