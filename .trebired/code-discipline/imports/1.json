@@ -27,5 +27,6 @@
   "#t6wa0hlhh5fp": "./src/config.ts",
   "#vanjjel73k7w": "./src/ip-bans/config.ts",
   "#vsmkcuo4jes3": "./src/request-log.ts",
-  "#xhug2o5r75a8": "./src/ip-bans/spec.ts"
+  "#xhug2o5r75a8": "./src/ip-bans/spec.ts",
+  "#zq3wd7u9b4bf": "./src/startup.ts"
 }

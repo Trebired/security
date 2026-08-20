@@ -3,7 +3,7 @@ import { normalizers as normalize } from "@trebired/utils";
 import *as result from "@trebired/result";
 import *as requestUtils from "./request.js";
 import { readBanConfig } from "./config.js";
-import { resolveSecurityLogger } from "../logging.js";
+import { resolveSecurityLogger } from "#3uz11hbjf7fs";
 
 const securityMetaByRequest = new WeakMap<object, any>();
 
