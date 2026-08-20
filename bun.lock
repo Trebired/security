@@ -6,9 +6,9 @@
       "name": "@trebired/security",
       "dependencies": {
         "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.17",
-        "@trebired/env": "^0.1.0",
-        "@trebired/result": "^1.2.6",
-        "@trebired/store": "^3.1.0",
+        "@trebired/env": "^0.1.2",
+        "@trebired/result": "^1.2.7",
+        "@trebired/store": "^3.1.1",
         "@trebired/utils": "^0.8.0",
         "cors": "^2.8.6",
       },
@@ -33,11 +33,11 @@
 
     "@trebired/configs": ["@trebired/configs@0.2.2", "", {}, "sha512-zjKhehxoASimCIcE4iJtUKnD3TZs2xg1CrXOd4jnwhdm1sOXT9hw8iVXBDY37nelA5lTp+F65Gm0jhbkVfA0hw=="],
 
-    "@trebired/env": ["@trebired/env@0.1.0", "", { "dependencies": { "@trebired/utils": "^0.8.0" } }, "sha512-mLStP5vWeSjfDr4zO2fjTpM1H10yo8Ff+uAgn+pGDj5vIsX6yaxVG1mg7VDVil2YKcB9nfvQu3z8SLHd0I9TlQ=="],
+    "@trebired/env": ["@trebired/env@0.1.2", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.17", "@trebired/utils": "^0.8.0" } }, "sha512-fg12FvuhYhL8pDb5iqIH4x21jpmtKeZRYan0jUGa2e0v/wWPXmcG/wShZeyZeUOAnOt9eVwVtorNC9OWxPELlg=="],
 
-    "@trebired/result": ["@trebired/result@1.2.6", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.6", "@trebired/utils": "^0.6.0" } }, "sha512-6RZEAVYVsdy3+Z3z8DdfvvgLWvsKnu8C1yK16UWYDzv6LkPcxHTB9lO2SKYeuTXQbk4u0yl6WdjoC0GxT1JuxQ=="],
+    "@trebired/result": ["@trebired/result@1.2.7", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.17", "@trebired/utils": "^0.6.0" } }, "sha512-84bF8C90s3DsRK3Dkoyv5WUSA8eiqrgScv/jVkBtVc3NyH+TvQNjMauZ7qZ5yZ6M0TjyxAMc+SPgNTNCmqqIDA=="],
 
-    "@trebired/store": ["@trebired/store@3.1.0", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.6", "@package/result": "npm:@trebired/result@^1.1.6", "@trebired/utils": "^0.6.0", "pg": "^8.22.0" } }, "sha512-BtXXw6zJPgu/QY1tKhErySg1CwQYsLxTs1NCvIetpECtELX7Lxtz7PURmgY4ppfzb+NbVUNDoRxUg/IA6V1hRg=="],
+    "@trebired/store": ["@trebired/store@3.1.1", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.17", "@package/result": "npm:@trebired/result@^1.1.6", "@trebired/utils": "^0.6.0", "pg": "^8.22.0" } }, "sha512-2ItgLD3qBrm9XJlQWJT3no7zWmuFGOTF8ti51pKKS+1r4oXlM9rzKAkpbS5CCzBaiBAIUX0CG02iIsqScICRHA=="],
 
     "@trebired/utils": ["@trebired/utils@0.8.0", "", {}, "sha512-J7KWJsd2inrO1B3rx7O48KIcFFX0+3c+kR/Cxf4BPRpD1ytLXMWLdDJHbuamxYQCXZRK58aofBYR6AZSw9LxSg=="],
 
@@ -123,11 +123,9 @@
 
     "@trebired/code-discipline/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
 
-    "@trebired/result/@package/logger-adapter": ["@trebired/logger-adapter@0.4.16", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-aeFGnmMaek0C25ORHR78B8/7BkzzyEO9C+3BgY+ApOrI7pN2F3tK8NuYlH7zZg0qI4jRLq3N927A8sSdpmpBYg=="],
-
     "@trebired/result/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
 
-    "@trebired/store/@package/logger-adapter": ["@trebired/logger-adapter@0.4.16", "", { "dependencies": { "@package/logger": "npm:@trebired/logger@^2.5.28", "@trebired/utils": "^0.6.0" }, "peerDependencies": { "@trebired/logger": "^2.5.29" }, "optionalPeers": ["@trebired/logger"], "bin": { "logger-adapter-bridge": "dist/bridge/server.js" } }, "sha512-aeFGnmMaek0C25ORHR78B8/7BkzzyEO9C+3BgY+ApOrI7pN2F3tK8NuYlH7zZg0qI4jRLq3N927A8sSdpmpBYg=="],
+    "@trebired/store/@package/result": ["@trebired/result@1.2.7", "", { "dependencies": { "@package/logger-adapter": "npm:@trebired/logger-adapter@^0.4.17", "@trebired/utils": "^0.6.0" } }, "sha512-84bF8C90s3DsRK3Dkoyv5WUSA8eiqrgScv/jVkBtVc3NyH+TvQNjMauZ7qZ5yZ6M0TjyxAMc+SPgNTNCmqqIDA=="],
 
     "@trebired/store/@trebired/utils": ["@trebired/utils@0.6.0", "", {}, "sha512-uLclMCUuokqgfJmdqq69p+sw4l757VIGsxnm74EJ8oqzXRUBgfLFw7W5+ymRO/JYdXJaCkRKJRAGhltOQtZowQ=="],
   }
