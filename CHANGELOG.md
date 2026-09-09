@@ -4,6 +4,11 @@ All notable changes to `@trebired/security` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.2.0
+
+- Updated the `@trebired/utils` dependency range to `^0.9.0`, keeping every `@trebired` package on one range so a project cannot resolve two copies.
+- Updated the shipped `.trebired/logger/config.ts` `forVersion` to `2.7.0` and the `@trebired/code-discipline` / `@trebired/configs` ranges to `^7.2.0` / `^0.4.0`. The logger config named an older release, so under `@trebired/logger` 2.7 the version check threw and this package's log prefix was dropped.
+
 ## 0.1.3
 
 - Updated env, result, and store dependency ranges to the current package releases so consumers do not retain older nested logger-adapter installs.
