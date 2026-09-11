@@ -4,6 +4,10 @@ All notable changes to `@trebired/security` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.2.1
+
+- Changed the verification scripts and examples to print through `@trebired/logger-adapter` instead of `console` and `process.stdout`.
+
 ## 0.2.0
 
 - Updated the `@trebired/utils` dependency range to `^0.9.0`, keeping every `@trebired` package on one range so a project cannot resolve two copies.
