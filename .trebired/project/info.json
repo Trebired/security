@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "category": "package",
+  "subcategory": "security",
+  "status": "active",
+  "npm": "@trebired/security",
+  "description": {
+    "en": "CORS, CSP, security headers and request limits as middleware.",
+    "cs": "CORS, CSP, bezpečnostní hlavičky a limity požadavků jako middleware."
+  }
+}
