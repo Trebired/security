@@ -31,7 +31,6 @@ type SecurityIpBanLevelConfig = {
 };
 
 type SecurityIpBanStoreConfig = {
-  databaseUrlEnv?: string;
   entity?: string;
   table?: string;
   serverEntity?: string;

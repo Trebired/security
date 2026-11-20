@@ -1,4 +1,3 @@
-import { readProcessEnvValue } from "@trebired/env";
 import { createStoreApplicationRuntime } from "@trebired/store";
 import { normalizers as normalize } from "@trebired/utils";
 import { readResolvedSecurityConfigSync, resolveSecurityConfig } from "#t6wa0hlhh5fp";
@@ -33,16 +32,9 @@ function serverEntityName(): string {
   return normalize.toString(ipBanStoreConfig().serverEntity) || DEFAULT_SERVER_ENTITY;
 }
 
-function databaseUrl(): string {
-  const envName =
-  normalize.toString(ipBanStoreConfig().databaseUrlEnv) || "DATABASE_URL";
-  return readProcessEnvValue(envName).trim();
-}
-
 function nextRuntimeKey(): string {
   const store = ipBanStoreConfig();
   return JSON.stringify({
-      databaseUrl: databaseUrl(),
       entity: securityEntityName(),
       schema: normalize.toString(store.schema) || "public",
       serverEntity: serverEntityName(),
@@ -71,9 +63,6 @@ function createSecurityStoreRuntime(): SecurityStoreRuntime {
           storage: "postgres",
           table: normalize.toString(store.serverTable) || DEFAULT_SERVER_TABLE,
         },
-      },
-      env: {
-        DATABASE_URL: databaseUrl(),
       },
       logger: resolveSecurityLogger(undefined),
       postgres: {

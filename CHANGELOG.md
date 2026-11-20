@@ -4,6 +4,11 @@ All notable changes to `@trebired/security` will be documented here.
 
 This project follows semantic versioning once published.
 
+## 0.3.0
+
+- Breaking: the IP ban store no longer reads a database URL. `ipBans.store.databaseUrlEnv` is removed, and the ban runtime lets `@trebired/store` read `DATABASE_URL` and the `PG*` keys itself, so the package never holds the connection settings. Remove `databaseUrlEnv` from the app's security config.
+- Raised the dependency ranges: `@trebired/env` to `^0.2.5`, `@trebired/store` to `^4.0.0`.
+
 ## 0.2.3
 
 - Raised the dependency ranges to the current releases: `@trebired/env` to `^0.2.3`, `@trebired/logger-adapter` to `^0.8.2`, `@trebired/result` to `^1.4.1`, `@trebired/store` to `^3.2.3`, `@trebired/utils` to `^0.9.7`.
